@@ -4,20 +4,26 @@
 <meta charset="utf-8">
 <title>克拉盛宴</title>
 <link rel="stylesheet" href="css/jquery.fullPage.css">
-<link rel="stylesheet" href="css/style.css" />
+<!-- <link rel="stylesheet" href="css/style.css" /> -->
 <style>
+html {
+    font-size: 10px;
+}
+body {
+    font-family: '微软雅黑';
+}
 .section1 { 
     text-align: center;
     background: green 50%;
 }
 .section2 { 
-   
+   background: green 50%;
 }
 .section3 { 
-    background: url(images/3.jpg) 50%;
+    background: green 50%;
 }
 .section4 { 
-    background: url(images/4.jpg) 50%;
+    background: green 50%;
 }
 #myVideo{
     position: absolute;
@@ -55,17 +61,343 @@ video::-webkit-media-controls {
     display: none;
 }
 .fp-slidesNav ul li {
-    width: 100px;
-    height: 180px;
+    position: relative;
+    width: 8.8rem;
+    height: 10rem;
     background-color: #fff;
-    background-size: cover;
+    background-size: contain;
+    background-position: center center;
+    overflow: hidden;
 }
 .fp-slidesNav ul li a span {
-    display: none;
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: -22px;
+    display: block;
+    background: rgba(78, 46, 190, 0.74);
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    transition: all .4s;
+    border: none;
+}
+.fp-slidesNav ul li:hover{
+    transform: scale(1.1);
+    transform: all .4s;
+}
+.fp-slidesNav ul li:hover span{
+    bottom: 0;
+}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span {
+    background: rgba(78, 46, 190, 0.74);
+}
+.fp-slidesNav ul li a.active span {
+    bottom: 0;
+}
+.fp-tableCell {
+    display: block;
+    position: relative;
+}
+.dsc {
+    width: 66rem;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    color: #fff;
+    z-index: 8;
+    text-align: left;
+    margin-top: 0rem;
+}
+.dsc-title{
+    padding: 1rem 10rem 1rem 5rem;
+}
+.dsc-title h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: normal;
+    letter-spacing: 10px;
+}
+.dsc-title h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.dsc-body {
+    padding: 2rem 10rem 2rem 5rem;
+}
+.dsc-body p {
+    text-indent: 2rem;
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+.dsc-title-blue {
+    background: rgba(49, 23, 138, 0.64);
+}
+.dsc-body-black {
+    background: rgba(26, 26, 26, 0.64);
+}
+
+.dsc-title-blue1 {
+    background: rgba(50, 0, 226, 0.78);
+}
+.dsc-body-yellow {
+    background: rgba(185, 115, 23, 0.78);
+}
+
+.dsc-body-red {
+    background: rgba(162, 27, 31, 0.64);
+}
+
+.dsc-body-red1 {
+    background: rgba(163, 41, 185, 0.78);
+}
+
+.dsc-title-s1 {
+    background: rgba(50, 0, 226, 0.64);
+}
+.dsc-body-s1 {
+    background: rgba(163, 41, 185, 0.64);
+}
+
+.cus{
+    /*width: 40rem;*/
+}
+.cus .dsc-title{
+    padding-left: 3rem; 
+    padding-right: 26rem;
+}
+.cus .dsc-body{
+    padding-left: 3rem; 
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 26rem;
+}
+.cus-title-yellow {
+    background: #d4974d;
+}
+.cus-body-black {
+    background: rgba(77, 77, 77, 0.85);
+}
+
+.cus-title-blue {
+    background: rgba(20, 20, 106, 0.85);
+}
+
+.cus-title-red {
+    background: #650506;
+}
+
+.cus-title-yellow1 {
+    background: rgba(247, 176, 89, 0.85);
+}
+.cus-body-yellow {
+    background: rgba(160, 114, 88, 0.85);
+}
+
+.cus-title-green {
+    background: rgba(35, 86, 0, 0.85);
+}
+
+.cus-title-yellow2 {
+    background: rgba(94, 60, 17, 0.85);
+}
+
+.brand {
+    left: 0;
+    right: auto;
+}
+.brand .dsc-title{
+    padding-left: 26rem; 
+}
+.brand .dsc-body{
+    padding-left: 26rem; 
+    padding-top: 2rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+}
+
+.brand-title-yellow {
+    background: rgba(255, 120, 0, 0.85);
+}
+.brand-body-yellow {
+    background: rgba(230, 151, 93, 0.85);
+}
+
+.brand-title-yellow1 {
+    background: rgba(207, 133, 71, 0.85);
+}
+.brand-body-z {
+    background: rgba(90, 61, 72, 0.85);
+}
+
+.brand-title-yellow2 {
+    background: rgba(129, 91, 19, 0.85);
+}
+.brand-body-z2 {
+    background: rgba(37, 17, 10, 0.85);
+}
+
+.brand-title-yellow3 {
+    background: rgba(167, 83, 0, 0.85);
+}
+.brand-body-z3 {
+    background: rgba(102, 86, 64, 0.85);
+}
+
+
+.d {
+    left: 0;
+    right: auto;
+}
+.d .dsc-title{
+    padding-left: 26rem; 
+}
+.d .dsc-body{
+    padding-left: 26rem; 
+    padding-top: 2rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+    min-height: 10rem;
+}
+
+.d-title-s1 {
+    background: rgba(42, 104, 45, 0.85);
+}
+.d-body-s1 {
+    background: rgba(38, 43, 73, 0.85);
+}
+
+.d-title-s2 {
+    background: rgba(146, 46, 75, 0.85);
+}
+.d-body-s2 {
+    background: rgba(43, 45, 41, 0.85);
+}
+
+.d-title-s3 {
+    background: rgba(75, 117, 160, 0.85);
+}
+.d-body-s3 {
+    background: rgba(29, 67, 53, 0.85);
+}
+
+.d-title-s4 {
+    background: rgba(174, 130, 57, 0.85);
+}
+.d-body-s4 {
+    background: rgba(0, 0, 0, 0.48);
+}
+
+.d-title-s5 {
+    background: rgba(174, 130, 57, 0.85);
+}
+.d-body-s5 {
+    background: rgba(116, 33, 41, 0.57);
+}
+
+.d-title-s6 {
+    background: rgba(204, 127, 0, 0.85);
+}
+.d-body-s6 {
+    background: rgba(128, 92, 81, 0.57);
+}
+
+
+.s {
+    left: 0;
+    right: auto;
+}
+.s .dsc-title{
+    padding-left: 26rem; 
+}
+.s .dsc-body{
+    padding-left: 26rem; 
+    padding-top: 2rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+    min-height: 10rem;
+}
+
+.s-title-s1 {
+    background: rgba(29, 47, 163, 0.85);
+}
+.s-body-s1 {
+    background: rgba(36, 145, 144, 0.85);
+}
+
+.s-title-s2 {
+    background: rgba(139, 67, 67, 0.85);
+}
+.s-body-s2 {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.s-title-s3 {
+    background: rgba(85, 83, 83, 0.85);
+}
+.s-body-s3 {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.s-title-s4 {
+    background: rgba(189, 147, 33, 0.85);
+}
+.s-body-s4 {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.s-title-s5 {
+    background: rgba(202, 129, 59, 0.85);
+}
+.s-body-s5 {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.s-title-s6 {
+    background: rgba(206, 107, 102, 0.85);
+}
+.s-body-s6 {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.s-title-s7 {
+    background: rgba(202, 129, 59, 0.85);
+}
+.s-body-s7 {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.s-title-s8 {
+    background: rgba(155, 75, 25, 0.85);
+}
+.s-body-s8 {
+    background: rgba(3, 23, 22, 0.85);
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 10px;
+    }
 }
 </style>
 <script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/jquery.fullPage.js"></script>
 <script src="js/scrollReveal.min.js"></script>
 <script>
 $(function(){
@@ -85,12 +417,27 @@ $(function(){
         });
     }
 
+    function refresh() {
+        $('.fp-slidesNav').each(function(index, val) {
+             $(this).css('marginLeft', -$(this).width()/2);
+        });
+        $('.dsc').each(function(index, val) {
+             $(this).animate({
+                'marginTop': -$(this).height()/2
+             }, 100);
+        });
+    }
+
     function init() {
         renderControl();
+        refresh();
         try{
         Typekit.load();
         }catch(e){}
     }
+
+
+    $(window).resize(refresh);
 
     init();
 
@@ -111,46 +458,433 @@ $(function(){
         </div>
     </div>
 	<div class="section section2">
-        <div class="slide"><img src="images/founder/banner5.jpg" alt="" /></div>
-        <div class="slide"><img src="images/founder/banner1.jpg" alt="" /></div>
-        <div class="slide"><img src="images/founder/banner2.jpg" alt="" /></div>
-        <div class="slide"><img src="images/founder/banner3.jpg" alt="" /></div>
-        <div class="slide"><img src="images/founder/banner4.jpg" alt="" /></div>       
+        <div class="slide" data-title="创始人">
+            <img src="images/founder/banner5.jpg" alt="" />
+            <div class="dsc">
+                <div class="dsc-title dsc-title-s1">
+                    <h1>克拉盛宴</h1>
+                    <h2>创始人</h2>
+                </div>
+                <div class="dsc-body dsc-body-s1">
+                    <p>四位创始人凭借着自己每个人的闪光点，以及自己的团队，围绕着克拉盛宴这个初升的太阳，放射着万丈光芒。杨成桃的热情、严小健的果断、龙广南的匠心、文桂兰的求精，四位创始人用自己的良好品质铸就成了克拉盛宴品牌。“德达天下，卓越品质。”这样的品牌核心理念为每一位顾客带来了克拉盛宴独特的消费体验。四位创始人也带领着克拉盛宴不断地迈过大山，看更加美丽的风景。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="严小健">
+            <img src="images/founder/banner1.jpg" alt="" />
+            <div class="dsc">
+                <div class="dsc-title dsc-title-blue">
+                    <h1>克拉盛宴</h1>
+                    <h2>严小健，克拉盛宴创始人之一</h2>
+                </div>
+                <div class="dsc-body dsc-body-black">
+                    <p>克拉盛宴——严小健。健哥是公司里最酷的人，机车、钓鱼都是他最喜欢的爱好。同时用这样的爱好感染着公司的企业文化，机车的行动力以及钓鱼中的耐心。带领着公司团队有着极强果断的判断，行动能力。同时，也让所有员工对工作充满着耐心，所有的产品、策划、活动，都是沉到湖底开出的花，具有浓厚的现实意义。</p>
+                    <p>健哥作为公司的CMO、运营总监，其果断的判断力以及沉淀下来的分析力让公司的每一个决定都做到最正确。同时，带领着公司的发展方向。从线下转换到线上O2O的模式，成立公司品牌部、网销部。都使得克拉盛宴的团队更加强大，不惧风雨。</p>
+                    <p>成就自己的团队，就是成就自我。把团队和自己绑在一起，克拉盛宴，稳步向前地走向强大。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="龙广南">
+            <img src="images/founder/banner2.jpg" alt="" />
+            <div class="dsc">
+                <div class="dsc-title dsc-title-blue1">
+                    <h1>克拉盛宴</h1>
+                    <h2>龙广南，克拉盛宴创始人之一</h2>
+                </div>
+                <div class="dsc-body dsc-body-yellow">
+                    <p>克克拉盛宴——龙广南。在公司大家都亲切的叫他龙哥，他总是带着笑容，给予每位员工积极向上的活力。从2000年在深圳开始接触钻石专业镶嵌、筑模。曾是爱迪尔公司高级钻石镶嵌大师。成都钻石保养售后有着宗师的名号。和其它创始人一起创立克拉盛宴珠宝公司。秉承着自己的人生格言：“成功不重要，更重要的是自己努力过。”一生只为做好钻！
+    龙广南作为公司CTO，用专业细致的眼光严格把控克拉盛宴每一枚钻戒。为沉淀着十多年的传统工艺守住一片匠心。也感染着每一位员工，世界再嘈杂，匠人的内心，必须是安静、安定的。
+   “人有情怀、有信念、有态度。所以，没有理所当然。就是要在各种变数、可能之中，做到最好。”克拉盛宴因为龙哥而不断传承着中国世世代代的匠人精神。择一事，责一物，终一生。               </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="杨成桃">
+            <img src="images/founder/banner3.jpg" alt="" />
+            <div class="dsc">
+                <div class="dsc-title dsc-title-blue1">
+                    <h1>克拉盛宴</h1>
+                    <h2>杨成桃，克拉盛宴创始人之一</h2>
+                </div>
+                <div class="dsc-body dsc-body-red">
+                    <p>克拉盛宴——桃姐，从96年开始做财务总监，2012年开始，创业在成都加盟香港嘉华珠宝，2013年8月参加大成第一届婚嫁节。2014年成立克拉盛宴珠宝公司。秉承着只买克拉，为每一位新人打造满满的100分的爱，盛宴般的服务，做最好的品牌。
+    桃姐作为公司CFO、人力资源总监，用满满的热情带领着克拉盛宴专业的团队齐头奋进。帮助每位员工找到属于自己的职业生涯发展路线。带领着克拉盛宴专业的团队，为每一位顾客提供最舒适，最专业的购钻体验。
+    桃姐最喜欢的一句话是：“不逼着自己努力一把，永远也不知道自己有多优秀。”这句话作为公司所有员工的的人生格言。人生就是不断拼搏的过程，一念既出，万山无阻。                           </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="文桂兰">
+            <img src="images/founder/banner4.jpg" alt="" />
+            <div class="dsc">
+                <div class="dsc-title dsc-title-blue1">
+                    <h1>克拉盛宴</h1>
+                    <h2>文桂兰，克拉盛宴创始人之一</h2>
+                </div>
+                <div class="dsc-body dsc-body-red1">
+                    <p>克拉盛宴——文桂兰。作为公司设计总监，把克拉盛宴带领在时尚，潮流的最前线。因为家族从事着珠宝钻石行业，文桂兰从出生就把设计出最美、最耀眼的钻戒的愿望深深地刻在骨子里。2000年在大型钻石工厂管理所有工艺流程。2002年在爱迪尔公司设计管理。2014年和其他创始人一起建立成都克拉盛宴珠宝公司。
+    文桂兰作为公司设计总监，在传统的设计理念上加入中西方设计美学。设计出最温润华贵的钻戒。同时，根据每一位顾客的审美形态和审美理想，设计定制出独具克拉盛宴品牌特色的私人钻戒。受到广大顾客好评。                           </p>
+                </div>
+            </div>
+        </div>       
     </div>
 	<div class="section section3">
-        <div class="slide"><img src="images/customized/banner1.jpg" alt="" /></div>
-        <div class="slide"><img src="images/customized/banner2.jpg" alt="" /></div>
-        <div class="slide"><img src="images/customized/banner3.jpg" alt="" /></div>
-        <div class="slide"><img src="images/customized/banner4.jpg" alt="" /></div> 
-        <div class="slide"><img src="images/customized/banner5.jpg" alt="" /></div>
-        <div class="slide"><img src="images/customized/banner6.jpg" alt="" /></div>
-        <div class="slide"><img src="images/customized/banner7.jpg" alt="" /></div>
-        <div class="slide"><img src="images/customized/banner8.jpg" alt="" /></div>    
+        <div class="slide" data-title="定制服务">
+            <img src="images/customized/banner8.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-yellow">
+                    <h1>克拉盛宴</h1>
+                    <h2>定制服务</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p>结婚钻戒承载着一生的依托，当然得精益求精。定制钻戒守住爱，钻戒定制成了守护专属爱情的最好途径。克拉盛宴专家为新人全方位解读钻戒定制优势，让你们的结婚钻戒拥有独一无二的完美，守住一生一世永恒之爱。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="产品齐全">
+            <img src="images/customized/banner1.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-yellow">
+                    <h1>克拉盛宴</h1>
+                    <h2>产品齐全</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p> 克拉盛宴是目前西南地区定制店配备现货最多（裸钻、空托），选择最大的商家，各类品质挑选灵活；</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="快速定制">
+            <img src="images/customized/banner2.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-blue">
+                    <h1>克拉盛宴</h1>
+                    <h2>快速定制</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p>克拉盛宴拥有自己的售后、维护团队，定制服务“0”等待；</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="极速购石">
+            <img src="images/customized/banner3.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-yellow">
+                    <h1>克拉盛宴</h1>
+                    <h2>极速购石</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p> 克拉盛宴拥有国外钻石优先采购权，是目前西南地区钻石采购速度最快的商家；</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="信誉保障">
+            <img src="images/customized/banner4.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-red">
+                    <h1>克拉盛宴</h1>
+                    <h2>信誉保障</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p>克拉盛宴所有钻石均提供国际权威机构证书，并可为每一位顾客提供免费复检（国检）服务；</p>
+                </div>
+            </div>
+        </div> 
+        <div class="slide" data-title="价廉物美">
+            <img src="images/customized/banner5.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-yellow1">
+                    <h1>克拉盛宴</h1>
+                    <h2>价廉物美</h2>
+                </div>
+                <div class="dsc-body cus-body-yellow">
+                    <p>克拉盛宴所有货品都来自自家工厂，省去中间环节与广告费，让利顾客，比商场节约30%；</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="设计独立">
+            <img src="images/customized/banner6.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-green">
+                    <h1>克拉盛宴</h1>
+                    <h2>设计独立</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p> 克拉盛宴拥有自己的设计团队，可根据顾客需求，提供的素材独立设计款式；</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="权威认证">
+            <img src="images/customized/banner7.jpg" alt="" />
+            <div class="dsc cus">
+                <div class="dsc-title cus-title-yellow2">
+                    <h1>克拉盛宴</h1>
+                    <h2>权威认证</h2>
+                </div>
+                <div class="dsc-body cus-body-black">
+                    <p>克拉盛宴所售裸钻，均提供国际权威机构质检证书（GIA/ IGI），每一颗钻石都带有镭射防伪号码，可现场查询，假一赔十，支持中国国家权威机构（GNTC）复检。</p>
+                </div>
+            </div>
+        </div>
     </div>
 	<div class="section section4">
-        <div class="slide"><img src="images/brand/banner1.jpg" alt="" /></div>
-        <div class="slide"><img src="images/brand/banner2.jpg" alt="" /></div>
-        <div class="slide"><img src="images/brand/banner3.jpg" alt="" /></div>
-        <div class="slide"><img src="images/brand/banner4.jpg" alt="" /></div>   
-        <div class="slide"><img src="images/brand/banner5.jpg" alt="" /></div>     
+        <div class="slide" data-title="品牌溯源">
+            <img src="images/brand/banner1.jpg" alt="" />
+            <div class="dsc brand">
+                <div class="dsc-title brand-title-yellow">
+                    <h1>克拉盛宴</h1>
+                    <h2>品牌溯源</h2>
+                </div>
+                <div class="dsc-body brand-body-yellow">
+                    <p>克拉盛宴起源于香港百年珠宝品牌，以典雅，舒适，时尚，却又不失雍容和华贵的经典风格于2006年10月萌芽，以O2O模式开展线上咨询搜索线下体验的方式，为每一对追求幸福生活和完美品质的新人，提供婚嫁钻饰、钻戒、裸钻及高级珠宝的私人定制服务。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="旗舰店开幕">
+            <img src="images/brand/banner2.jpg" alt="" />
+            <div class="dsc brand">
+                <div class="dsc-title brand-title-yellow1">
+                    <h1>克拉盛宴</h1>
+                    <h2>2014.7  春熙路旗舰店开幕</h2>
+                </div>
+                <div class="dsc-body brand-body-z">
+                    <p>克拉盛宴致力传承经典，打造珠宝世家，于2014年在成都核心商业圈（春熙路）时代广场购置商铺扎根经营，为消费者权益提供更有力的保障。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="首出四川">
+            <img src="images/brand/banner3.jpg" alt="" />
+            <div class="dsc brand">
+                <div class="dsc-title brand-title-yellow2">
+                    <h1>克拉盛宴</h1>
+                    <h2>2016.8 布局中国 首出四川</h2>
+                </div>
+                <div class="dsc-body brand-body-z2">
+                    <p>克拉盛宴布局全国，首出四川，重庆分店于2016年8月盛大开幕。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="进驻南通">
+            <img src="images/brand/banner4.jpg" alt="" />
+            <div class="dsc brand">
+                <div class="dsc-title brand-title-yellow3">
+                    <h1>克拉盛宴</h1>
+                    <h2>2017.2 发力长三角 进驻南通</h2>
+                </div>
+                <div class="dsc-body brand-body-z3">
+                    <p>克拉盛宴南通分店于2017年2月14日正式开业。克拉盛宴珠宝借着南通浓厚的文化底蕴，丰富自己的品牌内涵与实力，故选址南通入驻崇川区濠南路18号阁楼影楼，为南通人“量体裁衣”，为其带来极其对味的特色婚戒定制服务，将这一股“幸福之泉”融入这水秀之城。</p>
+                </div>
+            </div>
+        </div>   
+        <div class="slide" data-title="华丽升级">
+            <img src="images/brand/banner5.jpg" alt="" />
+            <div class="dsc brand">
+                <div class="dsc-title brand-title-yellow3">
+                    <h1>克拉盛宴</h1>
+                    <h2>2017.5 旗舰店华丽升级</h2>
+                </div>
+                <div class="dsc-body brand-body-z3">
+                    <p>2017年5月克拉盛宴成都春熙路旗舰店华丽升级，以全新的店面形象盛大开幕，旨在为顾客打造了更舒适，更惬意的环境。</p>
+                </div>
+            </div>
+        </div>     
     </div>
     <div class="section section5">
-        <div class="slide"><img src="images/dsc/banner1.jpg" alt="" /></div>
-        <div class="slide"><img src="images/dsc/banner2.jpg" alt="" /></div>
-        <div class="slide"><img src="images/dsc/banner3.jpg" alt="" /></div>
-        <div class="slide"><img src="images/dsc/banner4.jpg" alt="" /></div>   
-        <div class="slide"><img src="images/dsc/banner5.jpg" alt="" /></div>  
-        <div class="slide"><img src="images/dsc/banner6.jpg" alt="" /></div>     
+        <div class="slide" data-title="品牌介绍">
+            <img src="images/dsc/banner6.jpg" alt="" />
+            <div class="dsc d">
+                <div class="dsc-title d-title-s6">
+                    <h1>克拉盛宴</h1>
+                    <h2>品牌介绍</h2>
+                </div>
+                <div class="dsc-body d-body-s6">
+                    <p>克拉盛宴源起于香港百年珠宝品牌，一直具有：雅、
+舒适、时尚，不失雍容和华贵的经典和现代多重风格。品
+牌于2006年10月开始萌芽，以O2O模式开展线上搜索咨询
+结合线下优质体验的模式，为每一对追求幸福生活和完美
+品质的新人，提供婚嫁钻饰、钻戒、裸钻及高级珠宝的私
+人定制服务。克拉盛宴致力传承经典，打造珠宝世家。于
+2014在成都核心商圈——春熙路，占据高地。于时代广场
+购置商铺扎根经营，为消费者权益提供更有力的保障。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="品牌信息">
+            <img src="images/dsc/banner1.jpg" alt="" />
+            <div class="dsc d">
+                <div class="dsc-title d-title-s1">
+                    <h1>克拉盛宴</h1>
+                    <h2>品牌信息</h2>
+                </div>
+                <div class="dsc-body d-body-s1">
+                    <p>中文名称 ：克拉盛宴    <br />         
+                    寓     意：钻石的克拉盛宴属于每一个人<br />
+                    英文名称 ：Carat Feast    <br />
+                    产品系列 ：钻石系列、钻饰系列、彩色宝石系列、高级珠宝定制<br />
+                    品牌属性 ：高品质，亲民价的珠宝品牌<br />
+                    品牌理念 ：私享，高品质，经典，非奢侈<br />
+                    价值定位 ：中高端轻奢侈品；服务于追求生活品质的客户群体
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="品牌愿景">
+            <img src="images/dsc/banner2.jpg" alt="" />
+            <div class="dsc d">
+                <div class="dsc-title d-title-s2">
+                    <h1>克拉盛宴</h1>
+                    <h2>品牌愿景</h2>
+                </div>
+                <div class="dsc-body d-body-s2">
+                    <p>克拉盛宴 奢华而不奢侈<br />
+                        不让人感到累赘，势必要追求一种优雅的态度<br />
+                        低调、舒适，却无损高贵与雅致<br />
+                        以亲民的价格把克拉钻带给每一位爱美之人
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="品牌理念">
+            <img src="images/dsc/banner3.jpg" alt="" />
+            <div class="dsc d">
+                <div class="dsc-title d-title-s3">
+                    <h1>克拉盛宴</h1>
+                    <h2>品牌理念</h2>
+                </div>
+                <div class="dsc-body d-body-s3">
+                    <p>“享，高品质  克拉，非奢侈”<br />
+                    私享，高品质<br />
+                    尊重品牌的内涵<br />
+                    尊重爱情里的独特<br />
+                    尊重产品优越的质量<br />
+                    尊重高品质的生活方式<br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="品牌LOGO">
+            <img src="images/dsc/banner4.jpg" alt="" />
+            <div class="dsc d">
+                <div class="dsc-title d-title-s4">
+                    <h1>克拉盛宴</h1>
+                    <h2>品牌LOGO</h2>
+                </div>
+                <div class="dsc-body d-body-s4">
+                    <p>设计理念：
+                    克拉盛宴是以定制钻饰品为主，Logo外型选用钻石横切面外轮廓，以贵金属的颜色为底色。KL取自克拉首字母缩写，文字部分选用的粗倩字体，表达出钻石具有的时尚气质和女性的柔美。
+                      “KL”释义为“热恋Knee Love”缩写，象征爱情、热恋、美好，也代表克拉盛宴对所有新人的由衷祝福。
+                    </p>
+                </div>
+            </div>
+        </div>   
+        <div class="slide" data-title="SLOGAN">
+            <img src="images/dsc/banner5.jpg" alt="" />
+            <div class="dsc d">
+                <div class="dsc-title d-title-s5">
+                    <h1>克拉盛宴</h1>
+                    <h2>SLOGAN</h2>
+                </div>
+                <div class="dsc-body d-body-s5">
+                    <p><br />爱的臻钻，恒久相伴</p>
+                </div>
+            </div>
+        </div>       
     </div>
     <div class="section section6">
-        <div class="slide"><img src="images/service/banner1.jpg" alt="" /></div>
-        <div class="slide"><img src="images/service/banner2.jpg" alt="" /></div>
-        <div class="slide"><img src="images/service/banner3.jpg" alt="" /></div>
-        <div class="slide"><img src="images/service/banner4.jpg" alt="" /></div>   
-        <div class="slide"><img src="images/service/banner5.jpg" alt="" /></div>  
-        <div class="slide"><img src="images/service/banner6.jpg" alt="" /></div>  
-        <div class="slide"><img src="images/service/banner7.jpg" alt="" /></div>  
-        <div class="slide"><img src="images/service/banner8.jpg" alt="" /></div>      
+        <div class="slide" data-title="售后服务">
+            <img src="images/service/banner1.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s1">
+                    <h1>克拉盛宴</h1>
+                    <h2>售后服务</h2>
+                </div>
+                <div class="dsc-body s-body-s1">
+                    <p>克拉盛宴完善的售后服务体系和严格的管理制度，以使客户的售后服务工作得到有力保障。公司设售后服务部，对外保证您的的每一个请求均有及时、唯一和有效的响应，对内负责协调内部资源，杜绝一切推诿和延误。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="免费加固">
+            <img src="images/service/banner2.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s2">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费加固</h2>
+                </div>
+                <div class="dsc-body s-body-s2">
+                    <p><br />终身免费加固、免费为您提供补钻服务（<0.05ct）,需新增材料仅收成本费。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="免费改圈">
+            <img src="images/service/banner3.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s3">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费改圈</h2>
+                </div>
+                <div class="dsc-body s-body-s3">
+                    <p><br /> 根据购买钻戒、钻饰款式与顾客需求，克拉盛宴为您提供圈号免费放大、缩小服务。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" data-title="免费刻字">
+            <img src="images/service/banner4.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s4">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费刻字</h2>
+                </div>
+                <div class="dsc-body s-body-s4">
+                    <p><br />根据所购钻戒、钻饰款式与顾客需求，克拉盛宴为您提供免费刻字（限字母、数字、符号）。</p>
+                </div>
+            </div>
+        </div>   
+        <div class="slide" data-title="免费翻新">
+            <img src="images/service/banner5.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s5">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费翻新</h2>
+                </div>
+                <div class="dsc-body s-body-s5">
+                    <p><br />所售钻戒、钻饰，克拉盛宴可为您提供终身免费抛光、翻新服务。</p>
+                </div>
+            </div>
+        </div>  
+        <div class="slide" data-title="免费换款">
+            <img src="images/service/banner6.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s6">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费换款</h2>
+                </div>
+                <div class="dsc-body s-body-s6">
+                    <p><br />所售钻戒、钻饰，无论年限均可以旧换新，按购买时标价换款，购买7日内免费换款。</p>
+                </div>
+            </div>
+        </div>  
+        <div class="slide" data-title="免费清洗">
+            <img src="images/service/banner7.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s7">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费清洗</h2>
+                </div>
+                <div class="dsc-body s-body-s7">
+                    <p><br />所售钻戒、钻饰，可为您提供终身免费清洗保养服务。</p>
+                </div>
+            </div>
+        </div>  
+        <div class="slide" data-title="免费配送">
+            <img src="images/service/banner8.jpg" alt="" />
+            <div class="dsc s">
+                <div class="dsc-title s-title-s8">
+                    <h1>克拉盛宴</h1>
+                    <h2>免费配送</h2>
+                </div>
+                <div class="dsc-body s-body-s8">
+                    <p><br />凡克拉盛宴所售钻戒、钻饰，全国均可免费快递上门，成都三环内可提供送货服务。</p>
+                </div>
+            </div>
+        </div>      
     </div>
 </div>
 

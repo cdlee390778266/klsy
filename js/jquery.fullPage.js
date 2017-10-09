@@ -1549,12 +1549,13 @@
 		function addSlidesNavigation(section, numSlides){
 			section.append('<div class="fp-slidesNav"><ul></ul></div>');
 			var nav = section.find('.fp-slidesNav');
+			var slides = section.find('.slide');
 
 			//top or bottom
 			nav.addClass(options.slidesNavPosition);
 
 			for(var i=0; i< numSlides; i++){
-				nav.find('ul').append('<li><a href="#"><span></span></a></li>');
+				nav.find('ul').append('<li><a href="#"><span>'+(slides.eq(i).data('title') ? slides.eq(i).data('title') : '')+'</span></a></li>');
 			}
 
 			//centering it

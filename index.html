@@ -385,6 +385,12 @@ video::-webkit-media-controls {
     background: rgba(3, 23, 22, 0.85);
 }
 
+.slide {
+    background-color: #000;
+    background-size: cover;
+    background-position: 50%;
+}
+
 @media screen and (max-width: 1200px) {
     html {
         font-size: 8px;
@@ -411,7 +417,7 @@ $(function(){
     function renderControl() {
         $('.fp-slidesNav li').each(function(index, val) {
              var index = $(this).parent().find('li').index($(this));
-             var srcArr = $(this).parents('.section').find('.fp-slides').find('img').eq(index).attr('src').split('.');
+             var srcArr = $(this).parents('.section').find('.fp-slides').find('.slide').eq(index).data('src').split('.');
              var bgSrc = srcArr[0] + '-small.' + srcArr[1];
              $(this).css('background-image', 'url('+ bgSrc +')');
         });
@@ -431,6 +437,7 @@ $(function(){
     function init() {
         renderControl();
         refresh();
+        $('#myVideo').get(0).play();
         try{
         Typekit.load();
         }catch(e){}
@@ -449,17 +456,15 @@ $(function(){
 
 <div id="klsy">
 	<div class="section section1" id="section0">
-        <video id="myVideo" loop autoplay="autoplay">
+        <video id="myVideo" loop autoplay data-autoplay>
             <source src="images/top/mov.mp4" type="video/mp4">
-            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
         </video>
         <div class="layer">
             <img src="images/top/logo.png" height="127" width="472" alt="" />
         </div>
     </div>
 	<div class="section section2">
-        <div class="slide" data-title="创始人">
-            <img src="images/founder/banner5.jpg" alt="" />
+        <div class="slide" data-title="创始人" style="background-image: url('images/founder/banner5.jpg');" data-src="images/founder/banner5.jpg">
             <div class="dsc">
                 <div class="dsc-title dsc-title-s1">
                     <h1>克拉盛宴</h1>
@@ -470,8 +475,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="严小健">
-            <img src="images/founder/banner1.jpg" alt="" />
+        <!-- <div class="slide" data-title="严小健" style="background-image: url('images/founder/banner1.jpg');" data-src="images/founder/banner1.jpg">
             <div class="dsc">
                 <div class="dsc-title dsc-title-blue">
                     <h1>克拉盛宴</h1>
@@ -483,9 +487,8 @@ $(function(){
                     <p>成就自己的团队，就是成就自我。把团队和自己绑在一起，克拉盛宴，稳步向前地走向强大。</p>
                 </div>
             </div>
-        </div>
-        <div class="slide" data-title="龙广南">
-            <img src="images/founder/banner2.jpg" alt="" />
+        </div> -->
+        <div class="slide" data-title="龙广南" style="background-image: url('images/founder/banner2.jpg');" data-src="images/founder/banner2.jpg">
             <div class="dsc">
                 <div class="dsc-title dsc-title-blue1">
                     <h1>克拉盛宴</h1>
@@ -498,8 +501,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="杨成桃">
-            <img src="images/founder/banner3.jpg" alt="" />
+        <!-- <div class="slide" data-title="杨成桃" style="background-image: url('images/founder/banner3.jpg');" data-src="images/founder/banner3.jpg">
             <div class="dsc">
                 <div class="dsc-title dsc-title-blue1">
                     <h1>克拉盛宴</h1>
@@ -511,9 +513,8 @@ $(function(){
     桃姐最喜欢的一句话是：“不逼着自己努力一把，永远也不知道自己有多优秀。”这句话作为公司所有员工的的人生格言。人生就是不断拼搏的过程，一念既出，万山无阻。                           </p>
                 </div>
             </div>
-        </div>
-        <div class="slide" data-title="文桂兰">
-            <img src="images/founder/banner4.jpg" alt="" />
+        </div> -->
+        <div class="slide" data-title="文桂兰" style="background-image: url('images/founder/banner4.jpg');" data-src="images/founder/banner4.jpg">
             <div class="dsc">
                 <div class="dsc-title dsc-title-blue1">
                     <h1>克拉盛宴</h1>
@@ -527,8 +528,7 @@ $(function(){
         </div>       
     </div>
 	<div class="section section3">
-        <div class="slide" data-title="定制服务">
-            <img src="images/customized/banner8.jpg" alt="" />
+        <div class="slide" data-title="定制服务" style="background-image: url('images/customized/banner8.jpg');" data-src="images/customized/banner8.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-yellow">
                     <h1>克拉盛宴</h1>
@@ -539,8 +539,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="产品齐全">
-            <img src="images/customized/banner1.jpg" alt="" />
+        <div class="slide" data-title="产品齐全" style="background-image: url('images/customized/banner1.jpg');" data-src="images/customized/banner1.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-yellow">
                     <h1>克拉盛宴</h1>
@@ -551,8 +550,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="快速定制">
-            <img src="images/customized/banner2.jpg" alt="" />
+        <div class="slide" data-title="快速定制" style="background-image: url('images/customized/banner2.jpg');" data-src="images/customized/banner2.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-blue">
                     <h1>克拉盛宴</h1>
@@ -563,8 +561,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="极速购石">
-            <img src="images/customized/banner3.jpg" alt="" />
+        <div class="slide" data-title="极速购石" style="background-image: url('images/customized/banner3.jpg');" data-src="images/customized/banner3.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-yellow">
                     <h1>克拉盛宴</h1>
@@ -575,8 +572,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="信誉保障">
-            <img src="images/customized/banner4.jpg" alt="" />
+        <div class="slide" data-title="信誉保障" style="background-image: url('images/customized/banner4.jpg');" data-src="images/customized/banner4.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-red">
                     <h1>克拉盛宴</h1>
@@ -587,8 +583,7 @@ $(function(){
                 </div>
             </div>
         </div> 
-        <div class="slide" data-title="价廉物美">
-            <img src="images/customized/banner5.jpg" alt="" />
+        <div class="slide" data-title="价廉物美" style="background-image: url('images/customized/banner5.jpg');" data-src="images/customized/banner5.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-yellow1">
                     <h1>克拉盛宴</h1>
@@ -599,8 +594,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="设计独立">
-            <img src="images/customized/banner6.jpg" alt="" />
+        <div class="slide" data-title="设计独立" style="background-image: url('images/customized/banner6.jpg');" data-src="images/customized/banner6.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-green">
                     <h1>克拉盛宴</h1>
@@ -611,8 +605,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="权威认证">
-            <img src="images/customized/banner7.jpg" alt="" />
+        <div class="slide" data-title="权威认证" style="background-image: url('images/customized/banner7.jpg');" data-src="images/customized/banner7.jpg">
             <div class="dsc cus">
                 <div class="dsc-title cus-title-yellow2">
                     <h1>克拉盛宴</h1>
@@ -625,8 +618,7 @@ $(function(){
         </div>
     </div>
 	<div class="section section4">
-        <div class="slide" data-title="品牌溯源">
-            <img src="images/brand/banner1.jpg" alt="" />
+        <div class="slide" data-title="品牌溯源" style="background-image: url('images/brand/banner1.jpg');" data-src="images/brand/banner1.jpg">
             <div class="dsc brand">
                 <div class="dsc-title brand-title-yellow">
                     <h1>克拉盛宴</h1>
@@ -637,8 +629,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="旗舰店开幕">
-            <img src="images/brand/banner2.jpg" alt="" />
+        <div class="slide" data-title="旗舰店开幕" style="background-image: url('images/brand/banner2.jpg');" data-src="images/brand/banner2.jpg">
             <div class="dsc brand">
                 <div class="dsc-title brand-title-yellow1">
                     <h1>克拉盛宴</h1>
@@ -649,8 +640,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="首出四川">
-            <img src="images/brand/banner3.jpg" alt="" />
+        <div class="slide" data-title="首出四川" style="background-image: url('images/brand/banner3.jpg');" data-src="images/brand/banner3.jpg">
             <div class="dsc brand">
                 <div class="dsc-title brand-title-yellow2">
                     <h1>克拉盛宴</h1>
@@ -661,8 +651,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="进驻南通">
-            <img src="images/brand/banner4.jpg" alt="" />
+        <div class="slide" data-title="进驻南通" style="background-image: url('images/brand/banner4.jpg');" data-src="images/brand/banner4.jpg">
             <div class="dsc brand">
                 <div class="dsc-title brand-title-yellow3">
                     <h1>克拉盛宴</h1>
@@ -673,8 +662,7 @@ $(function(){
                 </div>
             </div>
         </div>   
-        <div class="slide" data-title="华丽升级">
-            <img src="images/brand/banner5.jpg" alt="" />
+        <div class="slide" data-title="华丽升级" style="background-image: url('images/brand/banner5.jpg');" data-src="images/brand/banner5.jpg">
             <div class="dsc brand">
                 <div class="dsc-title brand-title-yellow3">
                     <h1>克拉盛宴</h1>
@@ -687,8 +675,7 @@ $(function(){
         </div>     
     </div>
     <div class="section section5">
-        <div class="slide" data-title="品牌介绍">
-            <img src="images/dsc/banner6.jpg" alt="" />
+        <div class="slide" data-title="品牌介绍" style="background-image: url('images/dsc/banner6.jpg');" data-src="images/dsc/banner6.jpg">
             <div class="dsc d">
                 <div class="dsc-title d-title-s6">
                     <h1>克拉盛宴</h1>
@@ -707,8 +694,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="品牌信息">
-            <img src="images/dsc/banner1.jpg" alt="" />
+        <div class="slide" data-title="品牌信息" style="background-image: url('images/dsc/banner1.jpg');" data-src="images/dsc/banner1.jpg">
             <div class="dsc d">
                 <div class="dsc-title d-title-s1">
                     <h1>克拉盛宴</h1>
@@ -726,8 +712,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="品牌愿景">
-            <img src="images/dsc/banner2.jpg" alt="" />
+        <div class="slide" data-title="品牌愿景" style="background-image: url('images/dsc/banner2.jpg');" data-src="images/dsc/banner2.jpg">
             <div class="dsc d">
                 <div class="dsc-title d-title-s2">
                     <h1>克拉盛宴</h1>
@@ -742,8 +727,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="品牌理念">
-            <img src="images/dsc/banner3.jpg" alt="" />
+        <div class="slide" data-title="品牌理念" style="background-image: url('images/dsc/banner3.jpg');" data-src="images/dsc/banner3.jpg">
             <div class="dsc d">
                 <div class="dsc-title d-title-s3">
                     <h1>克拉盛宴</h1>
@@ -760,8 +744,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="品牌LOGO">
-            <img src="images/dsc/banner4.jpg" alt="" />
+        <div class="slide" data-title="品牌LOGO" style="background-image: url('images/dsc/banner4.jpg');" data-src="images/dsc/banner4.jpg">
             <div class="dsc d">
                 <div class="dsc-title d-title-s4">
                     <h1>克拉盛宴</h1>
@@ -775,8 +758,7 @@ $(function(){
                 </div>
             </div>
         </div>   
-        <div class="slide" data-title="SLOGAN">
-            <img src="images/dsc/banner5.jpg" alt="" />
+        <div class="slide" data-title="SLOGAN" style="background-image: url('images/dsc/banner5.jpg');" data-src="images/dsc/banner5.jpg">
             <div class="dsc d">
                 <div class="dsc-title d-title-s5">
                     <h1>克拉盛宴</h1>
@@ -789,8 +771,7 @@ $(function(){
         </div>       
     </div>
     <div class="section section6">
-        <div class="slide" data-title="售后服务">
-            <img src="images/service/banner1.jpg" alt="" />
+        <div class="slide" data-title="售后服务" style="background-image: url('images/service/banner1.jpg');" data-src="images/service/banner1.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s1">
                     <h1>克拉盛宴</h1>
@@ -801,8 +782,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="免费加固">
-            <img src="images/service/banner2.jpg" alt="" />
+        <div class="slide" data-title="免费加固" style="background-image: url('images/service/banner2.jpg');" data-src="images/service/banner2.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s2">
                     <h1>克拉盛宴</h1>
@@ -813,8 +793,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="免费改圈">
-            <img src="images/service/banner3.jpg" alt="" />
+        <div class="slide" data-title="免费改圈" style="background-image: url('images/service/banner3.jpg');" data-src="images/service/banner3.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s3">
                     <h1>克拉盛宴</h1>
@@ -825,8 +804,7 @@ $(function(){
                 </div>
             </div>
         </div>
-        <div class="slide" data-title="免费刻字">
-            <img src="images/service/banner4.jpg" alt="" />
+        <div class="slide" data-title="免费刻字" style="background-image: url('images/service/banner4.jpg');" data-src="images/service/banner4.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s4">
                     <h1>克拉盛宴</h1>
@@ -837,8 +815,7 @@ $(function(){
                 </div>
             </div>
         </div>   
-        <div class="slide" data-title="免费翻新">
-            <img src="images/service/banner5.jpg" alt="" />
+        <div class="slide" data-title="免费翻新" style="background-image: url('images/service/banner5.jpg');" data-src="images/service/banner5.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s5">
                     <h1>克拉盛宴</h1>
@@ -849,8 +826,7 @@ $(function(){
                 </div>
             </div>
         </div>  
-        <div class="slide" data-title="免费换款">
-            <img src="images/service/banner6.jpg" alt="" />
+        <div class="slide" data-title="免费换款" style="background-image: url('images/service/banner6.jpg');" data-src="images/service/banner6.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s6">
                     <h1>克拉盛宴</h1>
@@ -861,8 +837,7 @@ $(function(){
                 </div>
             </div>
         </div>  
-        <div class="slide" data-title="免费清洗">
-            <img src="images/service/banner7.jpg" alt="" />
+        <div class="slide" data-title="免费清洗" style="background-image: url('images/service/banner7.jpg');" data-src="images/service/banner7.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s7">
                     <h1>克拉盛宴</h1>
@@ -873,8 +848,7 @@ $(function(){
                 </div>
             </div>
         </div>  
-        <div class="slide" data-title="免费配送">
-            <img src="images/service/banner8.jpg" alt="" />
+        <div class="slide" data-title="免费配送" style="background-image: url('images/service/banner8.jpg');" data-src="images/service/banner8.jpg">
             <div class="dsc s">
                 <div class="dsc-title s-title-s8">
                     <h1>克拉盛宴</h1>
